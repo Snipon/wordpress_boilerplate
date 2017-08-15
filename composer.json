@@ -1,0 +1,29 @@
+{
+    "name": "snipon/wordpress",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Simon Larsson",
+            "email": "me@simon-larsson.se"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "johnpbloch/wordpress": "^4.8",
+        "wpackagist-plugin/debug-bar": "^0.9.0"
+    },
+    "extra": {
+        "wordpress-install-dir": "public/wp",
+        "installer-paths": {
+            "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    }
+}
